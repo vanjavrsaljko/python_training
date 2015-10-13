@@ -2,7 +2,13 @@ SUFFIXES = {1000: ['KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'],
 			1024: ['KiB', 'MiB', 'GiB', 'TiB', 'PiB', 'EiB', 'ZiB', 'YiB']}
 			
 def approximate_size(size, a_kilobyte_is_1024_bytes=True):
+	'''
+	Convert sizes to human readable format.
 	
+	size = a size in bytes
+	approximate size = human readable form of a size
+	
+	'''
 	if size < 0:
 		raise ValueError('number must be non-negative')
 		
@@ -17,3 +23,4 @@ def approximate_size(size, a_kilobyte_is_1024_bytes=True):
 if __name__ == '__main__':
 	print(approximate_size(10000000023423400, False))
 	print(approximate_size(10000000002342323420))
+	print(approximate_size.__doc__)
